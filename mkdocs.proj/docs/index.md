@@ -83,7 +83,7 @@ Defined by <a href="http://people.sc.fsu.edu/~jburkardt/cpp_src/test_interp_nd/t
 - `cb::G6` - Discontinuous
 
 ### RD family
-Defined by
+Defined by 
 
     $ ./cubmark -m r2d2lri -f RD28 -v testpack
 
@@ -142,5 +142,10 @@ Supported libraries
 Documentation
 -------------
 
-- <a href="doxygen/index.html">Doxygen documentation with full function equations</a>
+- <a href="doxygen/index.html">Doxygen documentation with annotated function equations</a>
+- <a href="bibliography.html">Bibliography</a>
 
+Source
+------
+
+- <a href="https://github.com/lucmil/cubmark/">GitHub repository</a>
