@@ -67,8 +67,8 @@ Supported libraries
 Documentation
 -------------
 
-- <a href="https://github.com/lucmil/cubmark/">Project page</a>
-- <a href="../bibliography.html">Bibliography</a>
+- <a href="https://lucmil.github.io/cubmark/">Project page</a>
+- <a href="https://lucmil.github.io/cubmark/bibliography.html">Bibliography</a>
 
 Source
 ------
