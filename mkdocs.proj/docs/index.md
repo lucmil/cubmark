@@ -83,7 +83,7 @@ Defined by <a href="http://people.sc.fsu.edu/~jburkardt/cpp_src/test_interp_nd/t
 - `cb::G6` - Discontinuous
 
 ### RD family
-Defined by 
+Defined by Robinson and de Doncker
 
     $ ./cubmark -m r2d2lri -f RD28 -v testpack
 
