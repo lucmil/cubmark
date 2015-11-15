@@ -72,6 +72,17 @@ formats or written to a file for later processing.
     5.0e-03  100%  100%    0%    0%    0%    1005000  1005000.0      50    62.0  4.1203509931e-01  3.3900491900e-03  1.1305245198e-04  2.7445108327e-04  F-e
     (...)
 
+### Histogram view
+
+A view for quick plotting with gnuplot. Multiple invocations concatenates data
+sets in the output.
+
+    $ ./cubmark -m dcuhre -m montecarlo -f G5:h=100,e=5.0 -c 1000000 \
+        -v histogram:x=ret,y=bestAbsErr \
+        -v histogram:x=ret,y=cpuTime \
+        -v histogram:x=ret,y=callCnt \
+		-o hist.txt
+
 ### Raw dump
 
 A raw dump of the results allows to calculate the above statistics at a later time or in a different application
@@ -97,7 +108,7 @@ Defined by <a href="http://people.sc.fsu.edu/~jburkardt/cpp_src/test_interp_nd/t
 - cb::G6 - Discontinuous
 
 ### RD family
-Defined by
+Defined by Robinson and de Doncker
 
     $ ./cubmark -m r2d2lri -f RD28 -v testpack
 
@@ -150,5 +161,16 @@ Supported libraries
 - HIntLib <http://mint.sbg.ac.at/HIntLib/>
 - DCUHRE <http://dl.acm.org/citation.cfm?id=210234>
 - GSL <https://www.gnu.org/software/gsl/>
+
+Documentation
+-------------
+
+- <a href="https://lucmil.github.io/cubmark/">Project page</a>
+- <a href="../bibliography.html">Bibliography</a>
+
+Source
+------
+
+- <a href="https://github.com/lucmil/cubmark/">GitHub repository</a>
 
 */

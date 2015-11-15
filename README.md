@@ -63,3 +63,15 @@ Supported libraries
 - HIntLib <http://mint.sbg.ac.at/HIntLib/>
 - DCUHRE <http://dl.acm.org/citation.cfm?id=210234>
 - GSL <https://www.gnu.org/software/gsl/>
+
+Documentation
+-------------
+
+- <a href="https://github.com/lucmil/cubmark/">Project page</a>
+- <a href="../bibliography.html">Bibliography</a>
+
+Source
+------
+
+- <a href="https://github.com/lucmil/cubmark/">GitHub repository</a>
+
