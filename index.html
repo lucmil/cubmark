@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="./img/favicon.ico">
+
+	<title>Cubature benchmark</title>
+
+        <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="./css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="./css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="./css/highlight.css">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body class="homepage">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href=".">Cubature benchmark</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#description">Description</a></li>
+        
+    
+        <li class="main "><a href="#abstract-from-the-paper">Abstract from the paper</a></li>
+        
+    
+        <li class="main "><a href="#usage">Usage</a></li>
+        
+            <li><a href="#example-output">Example output</a></li>
+        
+    
+        <li class="main "><a href="#test-functions">Test functions</a></li>
+        
+            <li><a href="#g-family">G family</a></li>
+        
+            <li><a href="#rd-family">RD family</a></li>
+        
+            <li><a href="#wigner-distributions">Wigner distributions</a></li>
+        
+    
+        <li class="main "><a href="#building">Building</a></li>
+        
+            <li><a href="#requirements">Requirements</a></li>
+        
+            <li><a href="#supported-libraries">Supported libraries</a></li>
+        
+            <li><a href="#documentation">Documentation</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="description">Description</h1>
+<p>A benchmark tool for multi-variate integration software.</p>
+<h1 id="abstract-from-the-paper">Abstract from the paper</h1>
+<p>A set of readily available procedures for multivariate integration are tested in
+the context of calculations in the quantum phase space.
+Performance and reliability is measured against a set of test functions
+including, but not limited to, the quantum probability mass of the
+distribution.
+A new benchmarking application written in C++ is described, inspired by the
+TESTPACK algorithm by A.Genz.</p>
+<h1 id="usage">Usage</h1>
+<pre><code>$ ./cubmark -m dcuhre -m montecarlo -f G5:h=100,e=5.0 -c 1000000 -v testpack
+</code></pre>
+<p>This will run the DCUHRE and GSL Monte Carlo integration using Genz C0 test function with difficulty level h = 100 and exponent 5.0. Limit the number of calls to 1 million for each run. Compile the results into parameters defined by TESTPACK.</p>
+<h2 id="example-output">Example output</h2>
+<p>The results can be displayed directly on a console in different post-processed
+formats or written to a file for later processing. There are three result
+views available: testpack, gnuplot and view.</p>
+<h3 id="testpack-view">TESTPACK view</h3>
+<pre><code>$ ./cubmark -m dcuhre -m montecarlo -f G5:h=100,e=5.0 -c 1000000 -v testpack
+</code></pre>
+<p><a href="http://people.sc.fsu.edu/~jburkardt/m_src/testpack/testpack.html">TESTPACK</a> format.</p>
+<pre><code class="bash"># Test function: G5
+# Parameters: G5:h=100,e=5.0
+# Boundary is infinite: 0
+# RET EE RE ROB Calls Time Q Fail
+# Method: dcuhre
+5.0e-02 { 2.03e-02 3.71e-02 } { 4.23e-04 1.06e-03 } 100% { 1.95e+02 1.95e+02 } { 0.00e+00 0.00e+00 } 1.8 0%
+5.0e-03 { 4.16e-03 4.27e-03 } { 1.76e-04 2.17e-04 } 100% { 9.75e+02 1.24e+03 } { 0.00e+00 0.00e+00 } 2.2 0%
+(...)
+
+# Method: montecarlo
+5.0e-02 { 6.07e-03 7.10e-03 } { 2.18e-03 2.67e-03 } 100% { 5.00e+03 5.00e+03 } { 0.00e+00 0.00e+00 } 1.3 0%
+5.0e-03 { 6.16e-03 6.99e-03 } { 2.47e-05 4.41e-05 } 0% { 1.00e+07 1.00e+07 } { 5.50e+02 5.50e+02 } 1.0 0%
+(...)
+</code></pre>
+
+<ul>
+<li>RET - given relative error tolerance</li>
+<li>EE - error estimate reported by the library (tertiles)</li>
+<li>RE - real error (tertiles)</li>
+<li>ROB - success/failure reporting reliability (average)</li>
+<li>CALLS - number of function evaluations (tertiles)</li>
+<li>TIME - cpu time used in milliseconds (tertiles)</li>
+<li>Q - result quality, as defined by A. Genz</li>
+<li>FAIL - failed results reported as sucessful</li>
+</ul>
+<h3 id="raw-dump">Raw dump</h3>
+<p>A raw dump of the results allows to calculate the above statistics at a later time or in a different application</p>
+<pre><code>$ ./cubmark -m dcuhre -m montecarlo -f G5:h=100,e=5.0 -c 1000000 -v raw -o run_G5.dat
+$ ./cubmark -i run_G5.dat -v testpack
+</code></pre>
+<h1 id="test-functions">Test functions</h1>
+<p>The following test functions are available:</p>
+<h3 id="g-family">G family</h3>
+<p>Defined by <a href="http://people.sc.fsu.edu/~jburkardt/cpp_src/test_interp_nd/test_interp_nd.html">A.Genz</a></p>
+<pre><code>$ ./cubmark -m r2d2lri -f G1:h=100,e=5.0 -v testpack
+</code></pre>
+<ul>
+<li><code>cb::G1</code> - Oscillatory</li>
+<li><code>cb::G2</code> - Product Peak</li>
+<li><code>cb::G3</code> - Corner Peak</li>
+<li><code>cb::G4</code> - Gaussian</li>
+<li><code>cb::G5</code> - "C0"</li>
+<li><code>cb::G6</code> - Discontinuous</li>
+</ul>
+<h3 id="rd-family">RD family</h3>
+<p>Defined by</p>
+<pre><code>$ ./cubmark -m r2d2lri -f RD28 -v testpack
+</code></pre>
+<ul>
+<li><code>cb::RD28Builder::compute</code></li>
+<li><code>cb::RD29Builder::compute</code></li>
+<li><code>cb::RD31Builder::compute</code></li>
+<li><code>cb::RD35Builder::compute</code></li>
+</ul>
+<h3 id="wigner-distributions">Wigner distributions</h3>
+<pre><code>$ ./cubmark -m r2d2lri -f W3:h=5 -v testpack
+</code></pre>
+<ul>
+<li><code>cb::W1</code> - Wigner distribution of a constant wavefunction</li>
+<li><code>cb::W2</code> - Wigner distribution of a triangle wavefunction</li>
+<li><code>cb::W3</code> - Wigner distribution of an infinite-potential well</li>
+</ul>
+<h1 id="building">Building</h1>
+<pre><code>$ cd benchmark
+$ cmake .
+$ make
+</code></pre>
+<p>To configure non-standard library paths you need to set CMake's include and library paths:</p>
+<pre><code>$ cmake \
+    -DCMAKE_INCLUDE_PATH="/path/to/Cubpack++/Code;/path/to/dcuhre;/path/to/r2d2lri;/path/to/HIntlib/include" \
+    -DCMAKE_LIBRARY_PATH="/path/to/Cubpack++/Code;/path/to/dcuhre;/path/to/r2d2lri;/path/to/HIntlib/lib"
+</code></pre>
+<p>For each library this should yield:</p>
+<pre><code class="bash">-- checking for module 'HIntLib'
+--   package 'HIntLib' not found
+-- Found HIntLib 
+HIntLib libraries found. Integration method will be available.
+</code></pre>
+
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>gcc 4.4.0+</li>
+<li>cmake 2.6+</li>
+<li>Boost 1.34+ (serialization, program-options)</li>
+</ul>
+<h2 id="supported-libraries">Supported libraries</h2>
+<ul>
+<li>Cubpack++ <a href="http://nines.cs.kuleuven.be/software/cubpack/">http://nines.cs.kuleuven.be/software/cubpack/</a></li>
+<li>r2d2lri <a href="http://dl.acm.org/citation.cfm?id=513006">http://dl.acm.org/citation.cfm?id=513006</a></li>
+<li>HIntLib <a href="http://mint.sbg.ac.at/HIntLib/">http://mint.sbg.ac.at/HIntLib/</a></li>
+<li>DCUHRE <a href="http://dl.acm.org/citation.cfm?id=210234">http://dl.acm.org/citation.cfm?id=210234</a></li>
+<li>GSL <a href="https://www.gnu.org/software/gsl/">https://www.gnu.org/software/gsl/</a></li>
+</ul>
+<h2 id="documentation">Documentation</h2>
+<ul>
+<li><a href="doxygen/index.html">Doxygen documentation with full function equations</a></li>
+</ul></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        <script src="./js/jquery-1.10.2.min.js"></script>
+        <script src="./js/bootstrap-3.0.3.min.js"></script>
+        <script src="./js/highlight.pack.js"></script>
+        <script>var base_url = '.';</script>
+        <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
+        <script src="./js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 0.14.0
+Build Date UTC : 2015-11-15 18:28:10.327404
+-->
