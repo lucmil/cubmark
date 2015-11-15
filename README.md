@@ -67,6 +67,7 @@ Supported libraries
 Documentation
 -------------
 
+- <a href="https://lucmil.github.io/cubmark/doxygen/">Doxygen documentation</a>
 - <a href="https://lucmil.github.io/cubmark/">Project page</a>
 - <a href="https://lucmil.github.io/cubmark/bibliography.html">Bibliography</a>
 
