@@ -1,0 +1,49 @@
+/*
+ * This file is part of Cubature Benchmark.
+ * Copyright (C) 2009 Łukasz Lis
+ *
+ * Cubature Benchmark is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Cubature Benchmark is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Cubature Benchmark.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#ifndef CUBMARK_CONFIG_H
+#define CUBMARK_CONFIG_H
+
+/* Program version */
+#cmakedefine CUBMARK_VERSION "@CUBMARK_VERSION@"
+
+/* Disable assertion code (default assertions enabled) */
+#cmakedefine CUBMARK_NDEBUG
+
+/* Enable use of exceptions */
+#cmakedefine CUBMARK_USE_EXCEPTIONS
+
+/* Enable GSL support */
+#cmakedefine CUBMARK_HAS_GSL
+
+/* Enable r2d2lri support */
+#cmakedefine CUBMARK_HAS_R2D2LRI
+
+/* Enable HIntLib support */
+#cmakedefine CUBMARK_HAS_HINTLIB
+
+/* Enable DCUHRE support */
+#cmakedefine CUBMARK_HAS_DCUHRE
+
+/* Enable Cubpack++ support */
+#cmakedefine CUBMARK_HAS_CUBPACK
+
+/* std::unique_ptr support */
+#cmakedefine HAVE_UNIQUE_PTR
+
+#endif//CUBMARK_CONFIG_H
