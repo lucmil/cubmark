@@ -1,0 +1,2 @@
+*	Qag2D error estimate is faked by returning the estimate of the first
+	dimension.

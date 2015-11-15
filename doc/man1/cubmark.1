@@ -1,0 +1,85 @@
+.\" Process this file with
+.\" groff -man -Tascii cubmark.1
+.\"
+.TH CUBMARK 1 "JULY 2010" Linux "User Manuals"
+.SH NAME
+cubmark \- run a cubature routine benchmark 
+.SH SYNOPSIS
+.B cubmark
+[options]
+.B -f
+test-function[:parameters]
+.B -m
+method
+.B -v
+view[:parameters]
+
+.B cubmark
+[options]
+.B -i
+.I input-file
+.B -v
+.I view 
+[\fB-o\fR \fIoutput-file\fR]
+.SH DESCRIPTION
+.B cubmark
+frobnicates the bar library by tweaking internal
+symbol tables. By default it parses all baz segments
+and rearranges them in reverse order by time for the
+.BR xyzzy (1)
+linker to find them. The symdef entry is then compressed
+using the WBG (Whiz-Bang-Gizmo) algorithm.
+All files are processed in the order specified.
+.SH OPTIONS
+.IP -b
+Do not write `busy' to stdout while processing.
+.IP "-c config-file"
+Use the alternate system wide
+.I config-file
+instead of
+.IR /etc/cubmark.conf .
+This overrides any
+.B FOOCONF
+environment variable.
+.IP -a
+In addition to the baz segments, also parse the
+blurfl headers.
+.IP -r
+Recursive mode. Operates as fast as lightning
+at the expense of a megabyte of virtual memory.
+.SH EXAMPLES
+.TP
+cubmark -f F1 -m qag2d -v full
+
+Benchmark the qag2d algorithm using the F1 test function and display the
+results in `full' format.
+.TP
+cubmark -f F1 -m qag2d -m r2d2lri -v histogram:x=ret,y=efficiency
+-v histogram:x=ret,y=robustness -o out.dat
+
+Benchmark qag2d and r2d2lri using the F1 test function. Write data for two plots
+to `out.dat'.
+.SH BUGS
+Lots and lots. The top three important at this moment are:
+
+Some test functions (notably F1, Wigner test functions) will accept
+integration boundaries, for which the application has no implemented solution.
+This means that the numeric solution, even if successful, will be compared to
+a solution for a different integral and reported as failed. Usually you can
+recognize this bug when your benchmark results show that all methods scored
+major failures across almost all test cases.
+
+The \fBqag2d\fR has a stub for error estimation. It reports the error
+estimate as given by the top QAG routine. The error estimate of the nested
+routine is ignored.
+
+The \fBraw\fR view format is binary and therefore not portable. It is used because
+the alternative, text representation produced by boost::serialization does not
+handle IEEE 754 floating point type properly.
+
+See the doxygen documentation and
+.B TODO 
+for more.
+.SH AUTHOR
+Written by Lukasz Lis
+
