@@ -27,6 +27,7 @@ class AdapterSlot
 public:
 	virtual void unlockSlot() = 0;
 	virtual AdapterSlot* getNext() const = 0;
+	virtual ~AdapterSlot() {};
 };
 
 
