@@ -195,6 +195,7 @@ public:
 	 */
 	std::string classification() const;
 
+	Result& operator=(const Result&);
 
 	template<class Archive>
 	void serialize(Archive& archive, const unsigned int version);

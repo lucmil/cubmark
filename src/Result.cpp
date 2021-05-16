@@ -245,4 +245,22 @@ std::string Result::classification() const
 	return classification;
 }
 
+Result& Result::operator=(const Result& source) {
+	caseIdx = source.caseIdx;
+	methodIdx = source.methodIdx;
+	efficiency = source.efficiency;
+	errorEstimationEfficiency = source.errorEstimationEfficiency;
+	robustness = source.robustness;
+	fallibilityMinor = source.fallibilityMinor;
+	fallibilityMajor = source.fallibilityMajor;
+	callCnt = source.callCnt;
+	cpuTime = source.cpuTime;
+	result = source.result;
+	absoluteErrorEstimate = source.absoluteErrorEstimate;
+	absoluteError = source.absoluteError;
+	relativeError = source.relativeError;
+	relativeTolerance = source.relativeTolerance;
+	return *this;
+}
+
 }
