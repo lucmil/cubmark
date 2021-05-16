@@ -25,8 +25,9 @@ Building
 ========
 
 ```bash
+$ mkdir benchmark
 $ cd benchmark
-$ cmake .
+$ cmake .,
 $ make
 ```
 
