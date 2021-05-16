@@ -40,7 +40,7 @@ std::pair<It, It> median(It begin, It end)
 }
 
 template<class T>
-std::pair<T*, T*> median(T* begin, T* end, std::less<T> lessOp = std::less<T>())
+std::pair<T*, T*> median(T* begin, T* end, std::less<T> lessOp)
 {
 	return median<T*, std::less<T> >(begin, end, lessOp);
 }
@@ -81,7 +81,7 @@ quantiles(It begin, It end, unsigned q, LessOp lessOp)
 
 template<class T>
 std::vector< std::pair<T*, T*> >
-quantiles(T* begin, T* end, unsigned q, std::less<T> lessOp = std::less<T>())
+quantiles(T* begin, T* end, unsigned q, std::less<T> lessOp)
 {
 	return quantiles<T*, std::less<T> >(begin, end, q, lessOp);
 }
