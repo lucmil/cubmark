@@ -50,7 +50,7 @@ public:
 	 * The test integral is of the form:
 	 * \f[ \int_0^\infty \int_0^\infty f(x, y) dy dx = \frac{1}{4} \pi \f]
 	 */
-	static double compute(double x, double y) throw();
+	static double compute(double x, double y);
 private:
 	const Boundary defaultBoundary;
 };

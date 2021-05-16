@@ -48,7 +48,7 @@ F1::F1(double C[], double x0[])
 }
 
 
-double F1::operator()(double x, double y) const throw()
+double F1::operator()(double x, double y) const
 {
 	x -= alpha;
 	y -= beta;

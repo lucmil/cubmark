@@ -26,7 +26,6 @@ namespace cb
 {
 
 void CHECK_(bool expression, const char *error_message, const char *prefix)
-throw(std::runtime_error)
 {
 	CHECK_(expression, std::runtime_error(error_message), prefix);
 }
@@ -39,7 +38,6 @@ namespace cb
 {
 
 void CHECK_(bool expression, const char *error_message, const char *prefix)
-throw()
 {
 	if(!expression)
 	{
@@ -61,14 +59,12 @@ namespace cb
 
 template<class E>
 void CHECK_(bool, const E&, const char *)
-throw(E)
 {
 }
 
 #else //CUBMARK_USE_EXCEPTIONS
 
 void CHECK_(bool a, const char *, const char *)
-throw()
 {
 }
 

@@ -39,7 +39,7 @@ W1::W1(double x0[])
 	}
 }
 
-double W1::operator()(double x, double k) const throw()
+double W1::operator()(double x, double k) const
 {
 	if(x < -eps || (x - x0[0]) > eps)
 	{

@@ -50,7 +50,7 @@ private:
 	double d_epsrel;
 	F d_psi;
 
-	static std::auto_ptr<WignerBuilder> instance;
+	static std::unique_ptr<WignerBuilder> instance;
 };
 
 }

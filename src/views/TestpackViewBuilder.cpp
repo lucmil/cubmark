@@ -58,7 +58,7 @@ void TestpackViewBuilder::create(SuiteResults& suiteResults, std::ostream& out)
 	const Definition& testFunctorDefinition(suiteSpec.getTestFunctor());
 
 	TestFunctorFactory testFunctorFactory;
-	std::auto_ptr<TestFunctorBuilder> testFunctor(
+	std::unique_ptr<TestFunctorBuilder> testFunctor(
 			testFunctorFactory.getByDefinition(testFunctorDefinition));
 
 	Boundary boundary(suiteSpec.getBoundary());

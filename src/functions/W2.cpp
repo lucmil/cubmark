@@ -57,7 +57,7 @@ W2::W2(double C[], double x0[])
 }
 
 double W2::I(double A, double B, double z, double x, double k)
-		const throw()
+		const
 {
 	return pow(A, 2) * pow(x, 2) * sin(k * z)/(PI * k)
 			+ 2. * A * B * x * sin(k * z)/(PI * k)
@@ -68,7 +68,7 @@ double W2::I(double A, double B, double z, double x, double k)
 }
 
 double W2::I_0(double A, double B, double z, double x)
-		const throw()
+		const
 {
 	return pow(A, 2) * pow(x, 2) * z/PI
 			- 1./12. * pow(A, 2) * pow(z, 3)/PI
@@ -76,7 +76,7 @@ double W2::I_0(double A, double B, double z, double x)
 			+ pow(B, 2) * z/PI;
 }
 
-double W2::I_lr(double z, double x, double k) const throw()
+double W2::I_lr(double z, double x, double k) const
 {
 	return A_l * A_r * pow(x, 2) * sin(k * z)/(PI * k)
 			+ A_l * B_r * x * sin(k * z)/(PI * k)
@@ -91,7 +91,7 @@ double W2::I_lr(double z, double x, double k) const throw()
 					+ (pow(k, 2) * pow(z, 2) - 2.) * sin(k * z));
 }
 
-double W2::I_lr_0(double z, double x) const throw()
+double W2::I_lr_0(double z, double x) const
 {
 	return A_l * A_r * pow(x, 2) * z/PI
 			- 1./12. * A_l * A_r * pow(z, 3)/PI
@@ -100,7 +100,7 @@ double W2::I_lr_0(double z, double x) const throw()
 			+ .25 * A_r * B_l * pow(z, 2)/PI + B_l * B_r * z/PI;
 }
 
-double W2::operator()(double x, double k) const throw()
+double W2::operator()(double x, double k) const
 {
 	if(x < 0.0 || x - b > eps)
 	{

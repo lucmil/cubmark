@@ -60,7 +60,7 @@ public:
 	 * \param x Upper boundaries of the integration region
 	 */
 	G3(double C[] = 0, double x[] = 0);
-	double operator()(double x, double y) const throw();
+	double operator()(double x, double y) const;
 private:
 	double C[2];
 	double x0[2];

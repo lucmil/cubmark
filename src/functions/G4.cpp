@@ -49,7 +49,7 @@ G4::G4(double C[], double x_0[])
 }
 
 
-double G4::operator()(double x, double y) const throw()
+double G4::operator()(double x, double y) const
 {
 	x -= x_0[0];
 	y -= x_0[1];

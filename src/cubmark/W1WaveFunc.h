@@ -52,7 +52,7 @@ struct W1WaveFunc
 	 * \param x
 	 * \returns \f$ psi_n(x) \f$
 	 */
-	double operator()(double x) const throw();
+	double operator()(double x) const;
 
 	/** \brief \f$ a \f$
 	 */

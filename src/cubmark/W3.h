@@ -70,7 +70,7 @@ struct W3 :
 	 * \param k \f$ k \f$
 	 * \returns \f$ W_n(x,k) \f$
 	 */
-	double operator()(double x, double k) const throw();
+	double operator()(double x, double k) const;
 
 private:
 	int n;

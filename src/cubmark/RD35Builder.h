@@ -50,7 +50,7 @@ public:
 	 * The test integral is of the form:
 	 * \f[ \int_{-\infty}^\infty \int_{-\infty}^\infty f(x, y) dy dx = 2 \pi \f]
 	 */
-	static double compute(double x, double y) throw();
+	static double compute(double x, double y);
 private:
 	const Boundary defaultBoundary;
 };

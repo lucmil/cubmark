@@ -48,7 +48,7 @@ private:
 	Adapter(const Adapter&);
 	Adapter& operator=(const Adapter&);
 
-	static R adapter(A...) throw();
+	static R adapter(A...);
 	static FO functor;
 };
 

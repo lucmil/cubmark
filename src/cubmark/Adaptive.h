@@ -100,28 +100,28 @@ private:
 	 * \param a Left range boundary (can be -inf)
 	 * \param b Right range boundary (can be inf)
 	 */
-	double rangeMidpoint(double a, double b) const throw();
+	double rangeMidpoint(double a, double b) const;
 
 	/** \brief Get a node's level in the quadtree
 	 *
 	 * \param addr Quadtree node address
 	 * \return Node level number
 	 */
-	size_t subdivDepth(size_t address) const throw();
+	size_t subdivDepth(size_t address) const;
 
 	/** \brief Calculate the address of the parent node
 	 *
 	 * \param Quadtree node address
 	 * \return Address of the parent
 	 */
-	size_t subdivParentAddress(size_t address) const throw();
+	size_t subdivParentAddress(size_t address) const;
 
 	/** \brief Calculate the address of the first child node
 	 *
 	 * \param addr Quadtree node address
 	 * \return Address of the first child node in the quadtree
 	 */
-	size_t subdivChildAddress(size_t address) const throw();
+	size_t subdivChildAddress(size_t address) const;
 
 	/** \brief Is the node at \c addr a leaf?
 	 *
@@ -196,11 +196,7 @@ private:
 
 	typedef std::map<size_t, NodeResult> ResultsType;
 
-#ifdef HAVE_UNIQUE_PTR
 	std::unique_ptr<Method> worker;
-#else
-	std::auto_ptr<Method> worker;
-#endif
 
 	WorkQueueType workQueue;
 

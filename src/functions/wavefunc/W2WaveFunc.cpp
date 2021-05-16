@@ -50,7 +50,7 @@ W2WaveFunc::W2WaveFunc(double x, double y, double a, double b)
 	N = 1./(sqrt(fabs(I_lx - I_a + I_b - I_rx)));
 }
 
-double W2WaveFunc::operator()(double x) const throw()
+double W2WaveFunc::operator()(double x) const
 {
 	double result = 0.;
 	if(x < x_t)

@@ -34,7 +34,7 @@ Constant::Constant(const double c)
 {
 }
 
-double Constant::operator()(double) const throw()
+double Constant::operator()(double) const
 {
 	return c;
 }

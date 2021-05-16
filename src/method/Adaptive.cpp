@@ -147,7 +147,7 @@ double Adaptive::compute()
 	return cubature;
 }
 
-double Adaptive::rangeMidpoint(double a, double b) const throw()
+double Adaptive::rangeMidpoint(double a, double b) const
 {
 	/* NOTE
 	 * This particular step length has been chosen because it's a pretty, round
@@ -233,17 +233,17 @@ unsigned long Adaptive::getCallLimit() const
 	return callLimit;
 }
 
-size_t Adaptive::subdivParentAddress(size_t address) const throw()
+size_t Adaptive::subdivParentAddress(size_t address) const
 {
 	return (address - 1)/4;
 }
 
-size_t Adaptive::subdivDepth(size_t address) const throw()
+size_t Adaptive::subdivDepth(size_t address) const
 {
 	return (size_t)floor(.5 * log2((double)(3*address + 2)));
 }
 
-size_t Adaptive::subdivChildAddress(size_t address) const throw()
+size_t Adaptive::subdivChildAddress(size_t address) const
 {
 	return 4 * address + 1;
 }

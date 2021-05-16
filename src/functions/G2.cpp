@@ -49,7 +49,7 @@ G2::G2(double C[], double x_0[])
 }
 
 
-double G2::operator()(double x, double y) const throw()
+double G2::operator()(double x, double y) const
 {
 	x -= x_0[0];
 	y -= x_0[1];

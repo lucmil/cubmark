@@ -28,7 +28,7 @@ QP1::QP1(double c)
 	this->cR = 1.0/c;
 }
 
-double QP1::operator()(double x, double y) const throw()
+double QP1::operator()(double x, double y) const
 {
 	return 1.0/pow(x*x + y*y + cR, 2.0);
 }

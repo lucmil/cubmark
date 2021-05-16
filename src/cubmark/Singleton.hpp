@@ -40,7 +40,7 @@ D & Singleton<D>::getInstance()
 }
 
 template<class D>
-std::auto_ptr<D> Singleton<D>::instance;
+std::unique_ptr<D> Singleton<D>::instance;
 
 }
 

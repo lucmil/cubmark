@@ -39,7 +39,7 @@ W3::W3(int n, double x0[]) :
 	}
 }
 
-double W3::operator()(double x, double k) const throw()
+double W3::operator()(double x, double k) const
 {
 	if(x < -eps || (x - x0[0]) > eps)
 	{

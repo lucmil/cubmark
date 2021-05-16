@@ -53,11 +53,7 @@ private:
 	typedef std::map<std::string, ResultStatistic*> FieldStatisticsType;
 	FieldStatisticsType fieldStatistics;
 
-#ifdef HAVE_UNIQUE_PTR
 	std::unique_ptr<ResultStatistic> rfArr[12];
-#else
-	std::auto_ptr<ResultStatistic> rfArr[12];
-#endif
 
 	static const char* fieldNames[12];
 	void initResultFields();

@@ -89,6 +89,6 @@ static WignerBuilder & WignerBuilder::getInstance()
 
 
 template<class F>
-std::auto_ptr<WignerBuilder<F> > WignerBuilder::instance;
+std::unique_ptr<WignerBuilder<F> > WignerBuilder::instance;
 
 }

@@ -27,7 +27,7 @@ Building
 ```bash
 $ mkdir benchmark
 $ cd benchmark
-$ cmake .,
+$ cmake ..
 $ make
 ```
 
@@ -54,14 +54,14 @@ Requirements
 
 - gcc 4.4.0+
 - cmake 2.6+
-- Boost 1.34+ (serialization, program-options)
+- Boost 1.34+ (serialization, program-options, test)
 
 Supported libraries
 -------------------
 
 - Cubpack++ <http://nines.cs.kuleuven.be/software/cubpack/>
 - r2d2lri <http://dl.acm.org/citation.cfm?id=513006>
-- HIntLib <http://mint.sbg.ac.at/HIntLib/>
+- HIntLib <https://github.com/JohannesBuchner/HIntLib>
 - DCUHRE <http://dl.acm.org/citation.cfm?id=210234>
 - GSL <https://www.gnu.org/software/gsl/>
 

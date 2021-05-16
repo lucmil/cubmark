@@ -74,7 +74,7 @@ private:
 	double absErrEst;
 	IntegrandType integrand;
 
-	std::auto_ptr<COMPOUND_REGION> region;
+	std::unique_ptr<COMPOUND_REGION> region;
 	EvaluationCounter cntr;
 };
 

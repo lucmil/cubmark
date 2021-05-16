@@ -50,7 +50,7 @@ public:
 	 * The test integral is of the form:
 	 * \f[ \int_2^1 \int_{-\infty}^{-1} f(x, y) dy dx = -1 \f]
 	 */
-	static double compute(double x, double y) throw();
+	static double compute(double x, double y);
 private:
 	const Boundary defaultBoundary;
 };

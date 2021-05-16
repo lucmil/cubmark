@@ -46,7 +46,7 @@ private:
 			std::ostream& out, const SamplesRangeType& samples);
 
 	const size_t fieldStatisticsSize;
-	std::auto_ptr<ResultStatistic> fieldStatistics[10];
+	std::unique_ptr<ResultStatistic> fieldStatistics[10];
 	void initFieldStatistics();
 
 	/** \brief Field widths for each printed field

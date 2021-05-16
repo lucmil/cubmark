@@ -58,7 +58,7 @@ public:
 	 * \param k \f$ k \f$
 	 * \returns \f$ W_n(x, k) \f$
 	 */
-	double operator()(double x, double k) const throw();
+	double operator()(double x, double k) const;
 
 private:
 	double b;
@@ -111,7 +111,7 @@ private:
 	 * + \frac{1}{2 \pi k^3} \, {A^2 \sin(k \zeta)}
 	 * \f]
 	 */
-	double I(double A, double B, double z, double x, double k) const throw();
+	double I(double A, double B, double z, double x, double k) const;
 
 	/** \brief Indefinite integral when the boundary fits on one slope and k = 0.
 	 *
@@ -124,7 +124,7 @@ private:
 	 * \f]
 	 *
 	 */
-	double I_0(double A, double B, double z, double x) const throw();
+	double I_0(double A, double B, double z, double x) const;
 
 	/** \brief Indefinite integral when the boundary is on both slopes
 	 *
@@ -144,7 +144,7 @@ private:
 	 * \f]
 	 *
 	 */
-	double I_lr(double z, double x, double k) const throw();
+	double I_lr(double z, double x, double k) const;
 
 
 	/** \brief Indefinite integral when the boundary is on both slopes, k = 0
@@ -160,7 +160,7 @@ private:
 	 * + \frac{1}{\pi} {B_l B_r \zeta}
 	 * \f]
 	 */
-	double I_lr_0(double z, double x) const throw();
+	double I_lr_0(double z, double x) const;
 };
 
 }

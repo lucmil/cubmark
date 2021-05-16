@@ -34,7 +34,7 @@ W1WaveFunc::W1WaveFunc(double a, double b) :
 {
 }
 
-double W1WaveFunc::operator()(double x) const throw()
+double W1WaveFunc::operator()(double x) const
 {
 	if(x < a || x > b)
 	{

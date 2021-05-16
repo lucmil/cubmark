@@ -36,8 +36,7 @@ namespace cb
  * \param error_message Error message to pass with the exception
  * \throws std::runtime_error when expression is false
  */
-void CHECK_(bool expression, const char *error_message, const char *prefix = "")
-throw(std::runtime_error);
+void CHECK_(bool expression, const char *error_message, const char *prefix = "");
 
 /** \brief Assertion check
  *
@@ -48,7 +47,6 @@ throw(std::runtime_error);
  */
 template<class E>
 void CHECK_(bool expression, const E& exception, const char* prefix = "")
-throw(E)
 {
 	if(!expression)
 	{
@@ -66,8 +64,7 @@ namespace cb
 {
 
 template<class E>
-void CHECK_(bool expression, const E &exception, const char *prefix)
-throw();
+void CHECK_(bool expression, const E &exception, const char *prefix);
 
 /** \brief Assertion check w/o exceptions
  *
@@ -80,12 +77,10 @@ throw();
  *               CUBMARK_LOG_PREFIX
  * \tparam E pseudo-exception class
  */
-void CHECK_(bool expression, const char *error_message, const char *prefix = "")
-throw();
+void CHECK_(bool expression, const char *error_message, const char *prefix = "");
 
 template<class E>
-void CHECK_(bool expression, const E &exception, const char *prefix = "")
-throw()
+void CHECK_(bool expression, const E &exception, const char *prefix = "");
 {
 	CHECK_(expression, exception.what(), prefix);
 }
@@ -106,7 +101,7 @@ template<bool E>
 struct compile_time_checker
 {
 	compile_time_checker(...) {};
-	operator int() const throw() {return 0;};
+	operator int() const {return 0;};
 };
 
 /** \brief Static assertion checker

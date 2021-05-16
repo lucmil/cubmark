@@ -50,7 +50,7 @@ public:
 	 * \param R phase
 	 */
 	G1(double R = 1);
-	double operator()(double x, double y) const throw();
+	double operator()(double x, double y) const;
 private:
 	double R;
 };

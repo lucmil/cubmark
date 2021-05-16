@@ -61,7 +61,7 @@ public:
 	 */
 	G2(double C[] = 0, double x_0[] = 0);
 
-	double operator()(double x, double y) const throw();
+	double operator()(double x, double y) const;
 
 private:
 	double C[2];

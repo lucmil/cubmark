@@ -46,7 +46,7 @@ public:
 	 *
 	 * \param x Discarded
 	 */
-	double operator()(double x) const throw();
+	double operator()(double x) const;
 private:
 	/**
 	 * \brief Value of the function

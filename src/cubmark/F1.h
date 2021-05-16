@@ -50,7 +50,7 @@ public:
 	 * \param x
 	 */
 	F1(double C[] = 0, double x0[] = 0);
-	double operator()(double x, double y) const throw();
+	double operator()(double x, double y) const;
 private:
 	double t;
 	double alpha;

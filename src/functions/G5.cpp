@@ -49,7 +49,7 @@ G5::G5(double C[], double x0[])
 }
 
 
-double G5::operator()(double x, double y) const throw()
+double G5::operator()(double x, double y) const
 {
 	return exp(-(C[0] * fabs(x - x0[0]) + C[1] * fabs(y - x0[1])));
 }

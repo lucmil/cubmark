@@ -54,7 +54,7 @@ void RD35Builder::parseParameter(const std::string& /*name*/,
 {
 }
 
-double RD35Builder::compute(double x, double y) throw()
+double RD35Builder::compute(double x, double y)
 {
 	return exp(-0.5*(x*x +y*y));
 }

@@ -36,7 +36,7 @@ private:
 	Singleton(const Singleton &);
 	Singleton & operator =(const Singleton &);
 
-	static std::auto_ptr<D> instance;
+	static std::unique_ptr<D> instance;
 };
 
 }

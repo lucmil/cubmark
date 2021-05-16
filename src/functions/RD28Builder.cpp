@@ -55,7 +55,7 @@ void RD28Builder::parseParameter(const std::string& /*name*/,
 {
 }
 
-double RD28Builder::compute(double /*x*/, double y) throw()
+double RD28Builder::compute(double /*x*/, double y)
 {
 	return pow(y, -2.0);
 }

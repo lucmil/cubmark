@@ -72,7 +72,7 @@ public:
 	void setCallLimit(unsigned long callLimit);
 	unsigned long getCallLimit() const;
 private:
-	std::auto_ptr<Method> methodInstance;
+	std::unique_ptr<Method> methodInstance;
 };
 
 }

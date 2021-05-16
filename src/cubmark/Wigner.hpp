@@ -38,7 +38,7 @@ template<class F>
 struct WavefuncIntegrand
 :   public std::binary_function<double, void*, double>
 {
-	double operator()(double zeta, void*) const throw()
+	double operator()(double zeta, void*) const
 	{
 		return f(x + zeta *.5) * f(x - zeta *.5);
 	}

@@ -54,7 +54,7 @@ void RD31Builder::parseParameter(const std::string& /*name*/,
 {
 }
 
-double RD31Builder::compute(double x, double y) throw()
+double RD31Builder::compute(double x, double y)
 {
 	return 1.0/pow(x*x + y*y + 20.0 * x - 10.0 * y + 126.0, 2.0);
 }

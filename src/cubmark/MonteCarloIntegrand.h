@@ -27,7 +27,7 @@ namespace cb
 struct MonteCarloIntegrand
 :   std::binary_function<double, double, double>
 {
-	double operator()(double* x, size_t dim, void* param) const throw()
+	double operator()(double* x, size_t dim, void* param) const
 	{
 	}
 };

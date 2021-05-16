@@ -34,7 +34,7 @@ W3WaveFunc::W3WaveFunc(unsigned n, double a, double b) :
 {
 }
 
-double W3WaveFunc::operator()(double x) const throw()
+double W3WaveFunc::operator()(double x) const
 {
 	if(x > a && x < b)
 	{

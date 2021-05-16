@@ -30,7 +30,7 @@ G1::G1(double R) :
 }
 
 
-double G1::operator()(double x, double y) const throw()
+double G1::operator()(double x, double y) const
 {
 	return cos(2.0 * PI * R + x + y);
 }

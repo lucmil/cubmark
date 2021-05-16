@@ -42,7 +42,7 @@ public:
 	 */
 	QP1(double c = 1.0);
 
-	double operator()(double x, double y) const throw();
+	double operator()(double x, double y) const;
 
 private:
 	/** \brief \f$ c^{-1} \f$

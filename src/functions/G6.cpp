@@ -49,7 +49,7 @@ G6::G6(double C[], double x_0[])
 }
 
 
-double G6::operator()(double x, double y) const throw()
+double G6::operator()(double x, double y) const
 {
 	if(x <= x_0[0] && y <= x_0[1])
 	{

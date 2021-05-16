@@ -58,7 +58,7 @@ AdapterSlot* Adapter<K, FO, R, A...>::getNext() const
 }
 
 template<int K, class FO, class R, class ...A>
-R Adapter<K, FO, R, A...>::adapter(A... a) throw()
+R Adapter<K, FO, R, A...>::adapter(A... a)
 {
 	return Adapter<K, FO, R, A...>::functor(a...);
 }

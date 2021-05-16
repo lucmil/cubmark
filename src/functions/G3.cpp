@@ -42,7 +42,7 @@ G3::G3(double C[], double x0[])
 }
 
 
-double G3::operator()(double x, double y) const throw()
+double G3::operator()(double x, double y) const
 {
 	if(x0[0] > 0.5)
 	{

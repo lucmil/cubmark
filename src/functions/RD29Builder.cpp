@@ -55,7 +55,7 @@ void RD29Builder::parseParameter(const std::string& /*name*/,
 {
 }
 
-double RD29Builder::compute(double x, double y) throw()
+double RD29Builder::compute(double x, double y)
 {
 	return exp(x - y);
 }
