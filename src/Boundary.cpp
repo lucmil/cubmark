@@ -29,6 +29,9 @@
 
 #include <cubmark/Scanner.hpp>
 
+using std::isnan;
+using std::isinf;
+
 namespace cb
 {
 

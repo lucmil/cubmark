@@ -25,6 +25,9 @@
 
 #include <cubmark/MonteCarlo.h>
 
+using std::isnan;
+using std::isinf;
+
 namespace cb
 {
 

@@ -21,6 +21,8 @@
 #include <cubmark/adapter/adapter.h>
 #include <cubmark/constants.h>
 
+using std::isinf;
+
 namespace cb
 {
 

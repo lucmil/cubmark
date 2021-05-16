@@ -26,6 +26,9 @@
 #include <cubmark/constants.h>
 #include <cubmark/algorithm.h>
 
+using std::isnan;
+using std::isinf;
+
 namespace cb
 {
 
